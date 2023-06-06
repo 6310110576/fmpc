@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Taviraj', serif;
+}
+.head {
+    height: 5.5rem;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.head img {
+    overflow: hidden;
+    margin-top: 10px;
+    float: in;
+}
+.head h1 {
+    color: aliceblue;
+    display: block;
+    margin-left: 25rem;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    height: 50px;
+    font-family: 'Niramit', sans-serif;
+}
+.form {
+    height: 37.8rem;
+    overflow: auto;
+    padding: 10px;
+    
+}
+.form .form-left {
+    float: left;
+    width: 47.1rem;
+    height: 32rem;
+    border-right: 1px solid black;
+    padding-left: 7px;
+    padding-top: 6px;
+}
+.form .form-right {
+    float: left;
+    width: 47.1rem;
+    height: 32rem;
+    padding-left: 30px;
+    padding-top: 15px;
+    margin-top: 22px;
+}
+.inp-box{
+    background-color: rgb(241, 241, 241);;
+
+}
+form {
+    margin-top: 30px;
+    margin-left: 15px;
+    font-size: 18px;
+}
+input[type=text] {
+    width: 35rem; 
+    height: 2.5rem; 
+    margin:6px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    border: 1px solid #C3C3C3;
+    padding: 5px;
+}
+input[type=text]:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    width: 20rem;
+    height: 4.7rem;
+}
+.btn_s {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 330px;
+    opacity: 0.9;
+    font-size: 18px;
+    margin-left: 37.rem;
+}
+.btn_su {
+    background-color: #2ECC71;
+    color: #424949 ;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    opacity: 0.9;
+    font-size: 18px;
+    margin-left: 30.5rem;
+    margin-top: 10px;
+    font-family: 'Niramit', sans-serif;
+}
+.btn_su:hover{
+    background-color: #28B463 ;
+}
+.btn_ca {
+    background-color: #E74C3C;
+    color: #424949;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    opacity: 0.9;
+    font-size: 18px;
+    margin-left: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: 'Niramit', sans-serif;
+}
+.btn_ca:hover{
+    background-color: #CB4335;
+}
+.btn_re {
+    background-color: #F1C40F;
+    color: #424949;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    opacity: 0.9;
+    font-size: 18px;
+    margin-left: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: 'Niramit', sans-serif;
+
+}
+.btn_re:hover{
+    background-color: #D4AC0D;
+}
+button {
+    display: inline;
+}
+p {
+    display: i;
+}
