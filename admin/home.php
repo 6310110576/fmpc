@@ -82,7 +82,7 @@ include 'db/connectDB.php';
             border: 2px solid #0084ff;
         }
         #btn_a {
-            margin-left: 35rem;
+            margin-left: 42rem;
             padding: 10px 20px;
             color: white;
             background-color: green;
@@ -127,12 +127,11 @@ include 'db/connectDB.php';
         
     </div>
     <div id="bar-s-b">
-    <from method = "POST" action ="searchshow.php">
-                <label for="usersearch">รหัสพนักงาน :</label>
-                <input type="text" placeholder="ใส่รหัสพนักงาน" class="search-box" name="usersearch">
-                <input type="submit" value="ค้นหาข้อมูลพนักงาน" id="btn_s" >
-                <a href="form_add.php" id="btn_a">เพิ่มข้อมูล</a>
-    </from>        
+    <form method="POST" action="search.php">
+        <input type="text" name="search" placeholder="ใส่รหัสพนักงาน" class="search-box" required>
+        <button type="submit" id="btn_s">ค้นหาข้อมูลพนักงาน</button>
+        <a href="form_add.php" id="btn_a">เพิ่มข้อมูล</a>
+    </form>
     </div>
 
 

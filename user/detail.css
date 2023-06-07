@@ -54,6 +54,7 @@
     flex-direction: row;
     margin: 0 20px;
     display: block;
+    border-top: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
@@ -71,6 +72,7 @@
     margin: 0 20px 3px 1px;
     margin-right: 35px;
     display: block;
+    border-top: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
@@ -84,7 +86,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0 20px 3px 0;
-    display: block;;
+    display: block;
+    border-top: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
@@ -99,12 +102,25 @@ ul li{
     height: max-content;
 
 } 
+#btn_ed {
+    height: 2.5rem;
+    width: 8rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    margin-left: 2rem;
+    border-radius: 5px;
+    color: #273746;
+    background-color: #E74C3C;
+    padding-top: 8px;
+    text-decoration: none;
+    font-family: Geneva;
+}
 #btn_a {
     height: 2.5rem;
     width: 8rem;
     margin-top: 1.5rem;
     text-align: center;
-    margin-left: 28rem;
+    margin-left: 20rem;
     border-radius: 5px;
     color: #273746;
     background-color: #E74C3C;

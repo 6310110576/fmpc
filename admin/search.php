@@ -1,25 +1,13 @@
 <?php 
 include "db/connectDB.php";
-// ตรวจสอบว่ามีค่ารหัสพนักงานที่ส่งมาหรือไม่
-if (isset($_POST['usersearch'])) {
-    // รหัสพนักงานที่ส่งมาจากแบบฟอร์ม
-    $userID = $_POST['usersearch'];
+// รับค่าการค้นหา
+$searchKeyword = $_POST['search'];
 
-    // คำสั่ง SQL สำหรับการเลือกข้อมูลพนักงานตามรหัสพนักงาน
-    $sql = "SELECT * FROM fmpc_computer WHERE cpuid = '$userID'";
+// สร้างคำสั่ง SQL สำหรับการค้นหา
+$sql = "SELECT * FROM fmpc_computer WHERE cpuid = '$searchKeyword'";
 
-    // ส่งคำสั่ง SQL ไปยังฐานข้อมูล
-    $result = mysqli_query($conn, $sql);
-
-    // ตรวจสอบว่ามีข้อมูลที่ได้รับหรือไม่
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-    }   else {
-        echo "ไม่พบข้อมูลพนักงาน";
-    }
-} else { echo "กรุณากรอกข้อมูลรหัสพนักงาน";
-    echo "กรุณากรอกข้อมูลรหัสพนักงาน";
-}
+// ทำการค้นหาข้อมูล
+$result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +32,7 @@ if (isset($_POST['usersearch'])) {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
+            margin-bottom: 20px;
             
         }
         .head img {
@@ -77,7 +66,7 @@ if (isset($_POST['usersearch'])) {
             height: 2.2rem;
             width: 35rem;
             margin-top: 0.6rem;
-            margin-left: 3rem;
+            margin-left: 1rem;
             border-radius: 6px;
             border: 1.5px solid black;
             padding: 5px;
@@ -99,9 +88,10 @@ if (isset($_POST['usersearch'])) {
         }
         #btn_s:hover{
             background-color:  #ababab;
+            border: 2px solid #0084ff;
         }
         #btn_a {
-            margin-left: 39.5rem;
+            margin-left: 35rem;
             padding: 10px 20px;
             color: white;
             background-color: green;
@@ -113,6 +103,7 @@ if (isset($_POST['usersearch'])) {
         }
         #btn_a:hover{
             background-color: #ababab;
+            border: 2px solid green;
         }
         td,tr {
             font-size: 18px;
@@ -122,7 +113,7 @@ if (isset($_POST['usersearch'])) {
             width: 8rem;
             margin-top: 1.5rem;
             text-align: center;
-            margin-left: 26rem;
+            margin-left: 17rem;
             border-radius: 5px;
             color: white;
             background-color: #E74C3C;
@@ -132,6 +123,20 @@ if (isset($_POST['usersearch'])) {
         }
         #btn_e:hover {
             background-color: #ababab;
+            border: 2px solid #E74C3C;
+        }
+        #btn_ex {
+            height: 2.5rem;
+            width: 8rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            margin-left: 1rem;
+            border-radius: 5px;
+            color: white;
+            background-color: #E74C3C;
+            padding-top: 8px;
+            text-decoration: none;
+            font-family: Geneva;
         }
     </style>
 
@@ -140,11 +145,9 @@ if (isset($_POST['usersearch'])) {
 <div class="head">
         <img src="img/logofm.png" alt="Fm-logo" width="190px" height="70px">
         <h1>แบบฟอร์มกรอกข้อมูล</h1>
-        <a href="../home.php" id="btn_e">กลับสู่หน้าหลัก</a>
-        
-    </div>
-
-
+        <a href="../logout.php" id="btn_e">ออกจากระบบ</a>
+        <a href="home.php" id="btn_ex">กลับสูู่หน้าหลัก</a>
+</div>
 <table class="table table-striped table-hover">
     <thead class="table table-dark">
         <tr style="text-align: center; width:60rem;">
@@ -156,9 +159,9 @@ if (isset($_POST['usersearch'])) {
         </tr>
     </thead>
             <?php 
-            $sql = "SELECT * FROM fmpc_computer WHERE cpuid = '$userID'";
-            $result = mysqli_query($conn,$sql); 
-            while($row=mysqli_fetch_assoc($result)){
+        if (mysqli_num_rows($result) > 0) {
+        // วนลูปแสดงผลข้อมูล
+            while ($row = mysqli_fetch_assoc($result)) {
             ?> 
                 <tr style="text-align: center;">
                     <td><?=$row['cpuid']?></td>
@@ -170,11 +173,14 @@ if (isset($_POST['usersearch'])) {
                         <a href="db/delete-inDB.php?id=<?=$row['cpuid']?>" class="btn btn-danger" style="margin-left: 5px;" onclick="Del(this.href);return false;">ลบข้อมูล</a>
                     </td>
                 </tr>
-                
-           <?php 
-           }
-            mysqli_close($conn);
-           ?> 
+               
+         <?php 
+        } 
+        }else {
+            echo "ไม่พบข้อมูลที่ค้นหา";
+        }
+         mysqli_close($conn);
+        ?> 
     </table>
  </div> 
 <script language "JavaScript">
@@ -187,3 +193,5 @@ function Del(mypage){
 </script>
 </body>
 </html>
+
+

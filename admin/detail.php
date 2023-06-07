@@ -15,6 +15,50 @@ $row=mysqli_fetch_assoc($result)
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Niramit:wght@200;500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/detail.css">
+    <style>
+        .content_left {
+    height: max-content;
+    width: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 20px;
+    display: block;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+.content_center {
+    height: max-content;
+    width: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 20px 3px 1px;
+    margin-right: 35px;
+    display: block;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+
+
+}
+        .content_right {
+            height: max-content;
+            width: 30rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin: 0 20px 3px 0;
+            display: block;
+            border-top: 2px solid black;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            border-left: 2px solid black;
+        }
+    </style>
 </head>
 <body> 
 <div class="head">
